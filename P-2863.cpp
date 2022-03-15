@@ -27,8 +27,9 @@ void dfs(vector<vector<int>>& graph, vector<int>& index, vector<int>& lowlink, i
             on_stk[stk.top()] = false;
             stk.pop();
         }
-        stk.pop();
         on_stk[cur] = false;
+        stk.pop();
+        
         if (cnt > 1) {
             res++;
         }
@@ -45,7 +46,7 @@ int main() {
         cin >> u >> v;
         graph[u].push_back(v);
     }
-    
+
     vector<int> index(n + 1, -1);
     vector<int> lowlink(n + 1, -1);
     stack<int> stk;
